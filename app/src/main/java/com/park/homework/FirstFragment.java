@@ -117,19 +117,36 @@ public class FirstFragment extends Fragment {
 
             numberView = itemView.findViewById(R.id.singleTextView);
 
+            numberView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String txt = numberView.getText().toString();
+                    Fragment numFragment = new ShowFragment(txt);
+
+
+                    FragmentManager fm = getFragmentManager();
+                    FragmentTransaction ft = fm.beginTransaction();
+
+                    ft.replace(R.id.frameFragLayout, numFragment);
+
+                    ft.addToBackStack(null);
+                    ft.commit();
+
+                }
+            });
         }
     }
 
+            class Data {
+                String numberText;
 
-    class Data {
-        String numberText;
+                public Data(String numberTxt) {
+                    this.numberText = numberTxt;
+
+                }
+            }
 
 
-        public Data(String numberTxt) {
-            this.numberText = numberTxt;
-
-        }
-    }
 
 
 }
