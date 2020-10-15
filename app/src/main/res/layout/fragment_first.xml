@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDarkBackground"
     android:orientation="vertical">
 
     <GridLayout
@@ -23,7 +24,9 @@
         android:layout_height="match_parent"
         android:layout_weight="6"
         android:id="@+id/addBtn"
-        android:text="ADD"
+        android:text="@string/addBtnText"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorLightText"
         android:textSize="30sp"
         />
 

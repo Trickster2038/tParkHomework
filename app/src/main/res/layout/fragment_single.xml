@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-
+    android:background="@color/colorDarkBackground"
     >
     <TextView
+        android:background="@color/colorDarkBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="100"
