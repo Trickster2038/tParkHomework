@@ -11,6 +11,7 @@
         android:columnCount="3"
         android:layout_weight="1">
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -21,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="6"
+        android:id="@+id/addBtn"
         android:text="ADD"
         android:textSize="30sp"
         />
