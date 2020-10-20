@@ -27,7 +27,7 @@
         android:text="@string/addBtnText"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorLightText"
-        android:textSize="30sp"
+        android:textSize="@dimen/bigText"
         />
 
 </LinearLayout>

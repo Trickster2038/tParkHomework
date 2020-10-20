@@ -5,27 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-
-
 public class ShowFragment extends Fragment {
-
     String text;
-
     public ShowFragment(String txt) {
         this.text = txt;
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,7 +27,4 @@ public class ShowFragment extends Fragment {
             textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorBlue));
         return  view;
     }
-
-
-
 }

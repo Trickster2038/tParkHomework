@@ -10,7 +10,7 @@
         android:gravity="center"
         android:layout_gravity="center"
         tools:text="42"
-        android:textSize="150sp"
+        android:textSize="@dimen/hugeText"
         android:background="@color/colorDarkBackground"
         android:id="@+id/showTextView"/>
 </RelativeLayout>
