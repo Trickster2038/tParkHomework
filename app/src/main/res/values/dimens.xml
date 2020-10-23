@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bigText">30sp</dimen>
+    <dimen name="hugeText">150sp</dimen>
+    <dimen name="inListText">40sp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+</resources>
