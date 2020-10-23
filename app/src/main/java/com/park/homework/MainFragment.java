@@ -23,11 +23,9 @@ public class MainFragment extends Fragment {
     private RecyclerView listNumber;
     private Button addButton;
     public int elemCnt= 100;
-    private ArrayList<Data> RESOURCE = new ArrayList<>();
-    private MyAdapter ADAPTER = new MyAdapter(RESOURCE);
+    private ArrayList<Data> resource = new ArrayList<>();
+    private MyAdapter adapter = new MyAdapter(resource);
     private final String CNT_STATE="savedInt";
-    private int LANDSCAPE_COL = 4;
-    private int PORTRAIT_COL = 3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,11 +33,12 @@ public class MainFragment extends Fragment {
         if (savedInstanceState != null ) {
             elemCnt = savedInstanceState.getInt(CNT_STATE);
         }
-        RESOURCE.clear();
-        for (int j = 1; j <= elemCnt; j++)
-            RESOURCE.add(new Data(Integer.toString(j)));
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        resource.clear();
 
+        for (int j = 1; j <= elemCnt; j++)
+            resource.add(new Data(Integer.toString(j)));
+
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         return view;
     }
 
@@ -49,19 +48,20 @@ public class MainFragment extends Fragment {
 
         addButton = view.findViewById(R.id.addBtn);
         listNumber = view.findViewById(R.id.recycler);
-        listNumber.setAdapter(ADAPTER);
+        listNumber.setAdapter(adapter);
 
         int col;
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) col = LANDSCAPE_COL;
-        else col = PORTRAIT_COL;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) col = getResources().getInteger(R.integer.landscapeCols);
+        else col = getResources().getInteger(R.integer.portraitCols);
+
         listNumber.setLayoutManager(new GridLayoutManager(view.getContext(), col));
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 elemCnt++;
-                RESOURCE.add(new Data(Integer.toString(elemCnt)));
-                ADAPTER.notifyItemInserted(elemCnt);
+                resource.add(new Data(Integer.toString(elemCnt)));
+                adapter.notifyItemInserted(elemCnt);
             }
         });
     }
