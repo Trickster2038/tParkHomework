@@ -19,10 +19,4 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
     }
-
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
 }
